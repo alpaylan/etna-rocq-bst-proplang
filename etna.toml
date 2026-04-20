@@ -1,0 +1,3 @@
+name = "BSTProplang"
+language = "Rocq"
+description = "Binary Search Tree workload using the PropLang runner framework (Rocq/Coq)."
