@@ -1,6 +1,14 @@
 name = "bst-proplang-rocq"
 language = "Rocq"
 description = "Binary Search Tree workload using the PropLang runner framework (Rocq/Coq)."
+strategies = [
+  "BespokeGenerator", 
+  "SpecificationBasedGenerator",
+  "TypeBasedGenerator",
+  "BespokeFuzzer",
+  "SpecificationBasedFuzzer",
+  "TypeBasedFuzzer",
+  "BespokeParallelGenerator"]
 
 mutations = [
   "insert_1",
