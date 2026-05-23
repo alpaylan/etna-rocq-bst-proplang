@@ -45,7 +45,7 @@ Definition gen_bst (s : nat) (lo hi : nat) : G Tree :=
 |}.
 Definition bespoke s := gen_bst s 0 100.
 
-Derive (Show) for Tree.
+Derive Instance (Show) for Tree.
 
 #[local] Instance dec_eq_tree : Dec_Eq Tree.
 Proof. dec_eq. Defined.

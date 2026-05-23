@@ -63,7 +63,7 @@ Fixpoint mutate_bst_ (t : Tree) (lo hi: nat) : G Tree :=
 Definition bespoke := gen_bst 6 0 40.
 Definition mutate_bst := (fun t => mutate_bst_ t 0 40).
 
-Derive (Shrink, Show) for Tree.
+Derive Instance (Shrink, Show) for Tree.
 
 Local Open Scope nat.
 

@@ -17,7 +17,7 @@ Local Open Scope prop_scope.
   {| fuzz n := choose (n - 5, n + 5) |}.
 
   
-Derive (Arbitrary, Show, Sized, Fuzzy) for Tree.
+Derive Instance (Arbitrary, Show, Sized, Fuzzy) for Tree.
 
 #[local] Instance dec_eq_tree : Dec_Eq Tree.
 Proof. dec_eq. Defined.

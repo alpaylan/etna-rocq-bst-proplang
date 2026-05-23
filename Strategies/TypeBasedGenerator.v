@@ -13,7 +13,7 @@ From PropLang Require Import PropLang.
 Local Open Scope nat.
 Local Open Scope prop_scope.
 
-Derive (Arbitrary, Show) for Tree.
+Derive Instance (Arbitrary, Show) for Tree.
 
 #[local] Instance dec_eq_tree : Dec_Eq Tree.
 Proof. dec_eq. Defined.

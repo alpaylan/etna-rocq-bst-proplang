@@ -18,11 +18,11 @@ Inductive between : nat -> nat -> nat -> Prop :=
 | between_n : forall n m, le n m -> between n (S n) (S (S m))
 | between_S : forall n m o, between n m o -> between n (S m) (S o).
 
-Derive DecOpt for (le x y).
-Derive ArbitrarySizedSuchThat for (fun x => le y x).
+Derive Instance DecOpt for (le x y).
+Derive Instance ArbitrarySizedSuchThat for (fun x => le y x).
 
-Derive ArbitrarySizedSuchThat for (fun x => between lo x hi).
-Derive DecOpt for (between lo x hi).
+Derive Instance ArbitrarySizedSuchThat for (fun x => between lo x hi).
+Derive Instance DecOpt for (between lo x hi).
 
 Inductive bst : nat -> nat -> Tree -> Prop :=
 | bst_leaf : forall lo hi, bst lo hi E
@@ -31,12 +31,12 @@ Inductive bst : nat -> nat -> Tree -> Prop :=
     bst lo k l -> bst k hi r ->
     bst lo hi (T l k v r).
 
-Derive ArbitrarySizedSuchThat for (fun t => bst lo hi t).
-Derive DecOpt for (bst lo hi t).
+Derive Instance ArbitrarySizedSuchThat for (fun t => bst lo hi t).
+Derive Instance DecOpt for (bst lo hi t).
 
 
 Definition spec_derived := (@arbitrarySizeST _ (fun t => bst 0 100 t) _ 10).
-Derive (Shrink, Show) for Tree.
+Derive Instance (Shrink, Show) for Tree.
 
 #[local] Instance dec_eq_tree : Dec_Eq Tree.
 Proof. dec_eq. Defined.
