@@ -34,7 +34,7 @@ if [ ! -f "Strategies/${fuzzer}"".v" ]; then
     exit 1
 fi
 
-qc_path=$OPAM_SWITCH_PREFIX"/share/coq-quickchick"
+qc_path=$OPAM_SWITCH_PREFIX"/lib/coq/user-contrib/QuickChick"
 
 # Build the fuzzer
 
