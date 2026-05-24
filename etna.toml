@@ -6,7 +6,6 @@ strategies = [
   "SpecificationBasedGenerator",
   "TypeBasedGenerator",
   "BespokeFuzzer",
-  "SpecificationBasedFuzzer",
   "TypeBasedFuzzer",
   "BespokeParallelGenerator"]
 
