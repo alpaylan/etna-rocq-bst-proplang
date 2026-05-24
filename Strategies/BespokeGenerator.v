@@ -90,12 +90,12 @@ Definition timedRunLoop (max_time : nat)  (cprop : CProp ∅): G TimedResult :=
 		match fuel with
 		| O => ret (mkTimedResult (mkResult discards false passed []) (timePassed start_time current_time))
 		| S fuel' => 
-			res <- genAndRun cprop (Nat.log2 (passed + discards)%nat);;
+			res <- generate_and_run cprop (Nat.log2 (passed + discards)%nat);;
 			match res with
 			| Normal seed false =>
 				(* Fails *)
-				let shrinkingResult := shrinkLoop 10 cprop seed in
-				let printingResult := print cprop 0%nat shrinkingResult in
+				let shrunk := shrinker cprop seed in
+				let printingResult := printer cprop shrunk in
 				ret (mkTimedResult (mkResult discards true (passed + 1) printingResult) (timePassed start_time current_time))
 			| Normal _ true =>
 				(* Passes *)

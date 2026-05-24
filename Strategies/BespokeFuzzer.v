@@ -6,7 +6,9 @@ Require Import List ZArith.
 Import ListNotations.
 Import MonadNotation.
 
-From PropLang Require Import PropLang.
+From PropLang Require Import PropLang SeedPool.
+From PropLang.seedpool Require Import Heap.
+From PropLang.loops Require Import FuzzLoop.
 From BSTProplang Require Import Spec.
 From BSTProplang Require Import Impl.
 
